@@ -28,6 +28,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
+    # [9. 投稿の編集が行えない]  @book.update(...)と、後ろに引数が必要になる
     if @book.update(book_params)
       flash[:notice] = "Book was successfully updated."
       redirect_to book_path(@book.id)
